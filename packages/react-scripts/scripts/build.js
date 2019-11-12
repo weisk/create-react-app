@@ -35,7 +35,7 @@ const path = require('path');
 const chalk = require('react-dev-utils/chalk');
 const fs = require('fs-extra');
 const webpack = require('webpack');
-const configFactory = require('../config/webpack.config');
+const configFactory = require('../config/webpack.config.build');
 const paths = require('../config/paths');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
@@ -144,7 +144,7 @@ checkBrowsers(paths.appPath, isInteractive)
     process.exit(1);
   });
 
-// Create the production build and print the deployment instructions.
+// Create the build and print the deployment instructions.
 function build(previousFileSizes) {
   // We used to support resolving modules according to `NODE_PATH`.
   // This now has been deprecated in favor of jsconfig/tsconfig.json
@@ -158,7 +158,9 @@ function build(previousFileSizes) {
     console.log();
   }
 
-  console.log('Creating an optimized production build...');
+  const isDevelopmentFlag = process.argv.includes('--development');
+  const buildType         = isDevelopmentFlag ? 'a development' : 'an optimized production';
+  console.log(`Creating ${buildType} build...`);
 
   const compiler = webpack(config);
   return new Promise((resolve, reject) => {
