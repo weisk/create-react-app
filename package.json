@@ -1,6 +1,11 @@
 {
   "private": true,
   "name": "create-react-app-enved",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weisk/create-react-app-enved"
+  },
   "workspaces": [
     "packages/*"
   ],
