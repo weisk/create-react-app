@@ -31,7 +31,7 @@ const features = [
   {
     title: 'No Lock-In',
     content:
-      'Under the hood, we use Webpack, Babel, ESLint, and other amazing projects to power your app. If you ever want an advanced configuration, you can ”eject” from Create React App and edit their config files directly.',
+      'Under the hood, we use webpack, Babel, ESLint, and other amazing projects to power your app. If you ever want an advanced configuration, you can ”eject” from Create React App and edit their config files directly.',
   },
 ];
 
@@ -79,7 +79,7 @@ function Home() {
           </div>
         </div>
       )}
-      <div className={styles.lightBackground}>
+      <div className={styles.gettingStartedSection}>
         <div className="container padding-vert--xl text--left">
           <div className="row">
             <div className="col col--4 col--offset-1">
